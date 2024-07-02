@@ -153,5 +153,34 @@ name("rakesh", 27)
 new_name= name
 new_name("suji", 33)
 
+tup = (223,"string", "string1", 485, 95, "set")
 
 
+thisset = {"apple", "banana", "cherry", True, 1, 2}
+
+thistuple = ("apple", "banana", "cherry")
+
+
+y=list(thistuple)
+
+y.remove("apple")
+print(y)
+
+thistuple = tuple(y)
+
+print(thistuple)
+
+#for unpacking the tuple
+thistuple = ("apple", "banana", "cherry")
+
+(green, yellow, orange) = thistuple
+
+print(green)
+print(yellow)
+print(orange)
+
+#it returns the value of index for a particular element
+print(thistuple.index("banana"))
+
+
+# if you want to modify the set & tuple you must convert into list and update it and again convert back to their data type

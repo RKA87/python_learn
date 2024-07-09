@@ -131,56 +131,41 @@ Use *args and **kwargs as function parameters
 # print(result(3,3))
 
 #case
-def fun02(arg4):
-    return arg4
+# def fun02(arg4):
+#     return arg4
 
-def fun01(fn,*args):
-    return fn(*args)
+# def fun01(fn,*args):
+#     return fn(*args)
 
-x=[2,3,4]
-testing = fun01(fun02,x) #fun02(x)
+# x=[2,3,4]
+# testing = fun01(fun02,x) #fun02(x)
 
 #case create an inner function to calcuate the addition
+'''
+Task 16
+Given a Python list, write a program to remove all occurrences of a given item.
+[2,3,4,1,2,5,10,2] remove 2..
+'''
+
+# li=[2,3,4,1,2,5,10,2]
+# num = 2
+
+# for each in li:
+#     if num == each:
+#         li.remove(each)
+# print(li)
 
 
+# l1=["rakeh", "suji", "ram", "sita", "suji"]
+
+# input_string = "suji"
+
+# for each in l1:
+#     if each == input_string:
+#         l1.remove(each)
+# print(l1)
 
 
-def name(name,age):
-    print(name, age)
-
-name("rakesh", 27)
-
-new_name= name
-new_name("suji", 33)
-
-tup = (223,"string", "string1", 485, 95, "set")
-
-
-thisset = {"apple", "banana", "cherry", True, 1, 2}
-
-thistuple = ("apple", "banana", "cherry")
-
-
-y=list(thistuple)
-
-y.remove("apple")
-print(y)
-
-thistuple = tuple(y)
-
-print(thistuple)
-
-#for unpacking the tuple
-thistuple = ("apple", "banana", "cherry")
-
-(green, yellow, orange) = thistuple
-
-print(green)
-print(yellow)
-print(orange)
-
-#it returns the value of index for a particular element
-print(thistuple.index("banana"))
-
-
-# if you want to modify the set & tuple you must convert into list and update it and again convert back to their data type
+input_string = "sujana"
+# letter_remove = "a"
+print(input_string.replace("a", ""))

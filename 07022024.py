@@ -270,6 +270,17 @@ if count == len(x):
     print("Its a Palindrome")
 else:
     print("Given input string is not a palindrome")
+
+#case 2
+def is_palindrome(l): 
+    flag = False #here we use the boolean function
+    for i in range(len(l)):
+        if l[i] == l[-i-1]:
+            flag = True
+    return flag
+    
+print(is_palindrome(l))
+
 '''
 Task 13
 You are given 2 lists.  Concatenate the elements of the list index wise
@@ -289,7 +300,6 @@ for element in range(0,len(l2)):
 Task 14
 Remove empty strings from a list of strings like [“Jupiter”, “”, “venus”, “Mars”, “”, “earth”, “Neptune”]
 '''
-
 def remove_empty_string(li):
 
     output_li = []

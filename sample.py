@@ -165,7 +165,11 @@ Given a Python list, write a program to remove all occurrences of a given item.
 #         l1.remove(each)
 # print(l1)
 
-
-input_string = "sujana"
-# letter_remove = "a"
-print(input_string.replace("a", ""))
+l=[1,4,5,19,0, 23, -1, 45]
+min1=l[0]
+for i in range(len(l)):
+     # If the other element is min than first element
+    if l[i] < min1: 
+        min1 = l[i] #It will change
+ 
+print("The smallest element in the list is ",min1)

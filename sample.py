@@ -201,6 +201,6 @@ def capitalize(name):
 res=map(capitalize,names)
 print(list(res))
 
-
 res=map(lambda name:name.capitalize(), names)
 print(list(res))
+

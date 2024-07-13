@@ -77,3 +77,18 @@ for row in range(6,0,-1):
     for col in range((row-1),0,-1):
         print(col, end=" ")
     print(" ")
+print("\n")
+# case 7
+#         * 
+#       * * 
+#     * * * 
+#   * * * * 
+# * * * * *
+x="*"
+for row in range(6,0,-1):
+    for col in range(row):
+        if col < row:
+            print(" ", end=" ")
+        else:
+            print(x, end=" ")
+    print(" ")

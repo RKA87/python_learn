@@ -11,7 +11,7 @@ cart = {
 
 print(cart.get("Apples"))
 
-print(cart["Apples"])
+print("cart[apples]",cart["Apples"])
 
 #get only keys
 print(cart.keys())

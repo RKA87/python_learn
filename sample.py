@@ -165,11 +165,42 @@ Given a Python list, write a program to remove all occurrences of a given item.
 #         l1.remove(each)
 # print(l1)
 
-l=[1,4,5,19,0, 23, -1, 45]
-min1=l[0]
-for i in range(len(l)):
-     # If the other element is min than first element
-    if l[i] < min1:
-        min1 = l[i] #It will change
+# l=[1,4,5,19,0, 23, -1, 45]
+# min1=l[0]
+# for i in range(len(l)):
+#      # If the other element is min than first element
+#     if l[i] < min1:
+#         min1 = l[i] #It will change
 
-print("The smallest element in the list is ",min1)
+# print("The smallest element in the list is ",min1)
+
+# x=l[0]
+# for element in l:
+#     if element <= x:
+#         x=element
+# print("Smallest Element is:", x)
+#         * 
+#       * * 
+#     * * * 
+#   * * * * 
+# * * * * *
+# x="*"
+# for row in range(6,0,-1):
+#     for col in range(6):
+#         if col < row:
+#             print(" ", end=" ")
+#         else:
+#             print(x, end=" ")
+#     print(" ")
+
+names = ['david', 'peter', 'jenifer']
+
+def capitalize(name):
+    return name.capitalize()
+
+res=map(capitalize,names)
+print(list(res))
+
+
+res=map(lambda name:name.capitalize(), names)
+print(list(res))

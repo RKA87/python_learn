@@ -75,7 +75,6 @@ print("Using map function:", tuple(result))
 result=map(lambda number:number*2 if number%2==0 else number, numbers) #lambda logic to be observe (if & else condition)
 print("Uing lambda function:",list(result))
 
-
 ###########################################################
 # FILTER FUNCTIONS
 ###########################################################
@@ -88,9 +87,18 @@ def my_age(x):
         return False
     
 res=filter(my_age,ages) #filter will automatically filter the elements and it won't store like map funtion (all elements)
-print(list(res))
+print(list(res)) #output of filter function [24, 32]
 
 #Using lambda function
 
 res=filter(lambda age:age>18, ages)
 print("Using lambda function output:", tuple(res))
+
+resl=map(my_age,ages)
+print("Using map:", list(resl)) #output of map function [False, False, False, False, 24, 32]
+
+import string
+
+lower=string.ascii_letters
+
+print(lower)

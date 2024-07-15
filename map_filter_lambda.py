@@ -97,8 +97,41 @@ print("Using lambda function output:", tuple(res))
 resl=map(my_age,ages)
 print("Using map:", list(resl)) #output of map function [False, False, False, False, 24, 32]
 
-import string
+# Another Case Example 
 
-lower=string.ascii_letters
+# print highest mountain greater than 8600
 
-print(lower)
+mountains = [
+    ['Makalu', 8485],
+    ['Lhotse', 8516],
+    ['Kanchendzonga', 8586],
+    ['K2', 8611],
+    ['Everest', 8848]
+]
+
+def greater_mountain(element):
+    if element[1]>8600:
+        return element
+
+#using filter function
+
+res1=filter(greater_mountain,mountains)
+print("Using Filter Function:", list(res1))
+
+#using map function
+res2=map(greater_mountain,mountains)
+print("Using Map Function:",list(res2))
+
+#using lambda function
+res3=map(lambda mountain:mountain[1]>8600, mountains)
+print("Using lambda with map:",list(res3))
+
+res4=filter(lambda mountain:mountain[1]>8600, mountains)
+print("Using lambda with filter:",list(res4))
+
+#using list comprehension syntax output_expresssion for loop in list condition
+res5=[element for element in mountains if element[1]>8600]
+print(res5)
+
+
+

@@ -193,14 +193,16 @@ Given a Python list, write a program to remove all occurrences of a given item.
 #             print(x, end=" ")
 #     print(" ")
 
-names = ['david', 'peter', 'jenifer']
+# names = ['david', 'peter', 'jenifer']
 
-def capitalize(name):
-    return name.capitalize()
+# def capitalize(name):
+#     return name.capitalize()
 
-res=map(capitalize,names)
-print(list(res))
+# res=map(capitalize,names)
+# print(list(res))
 
-res=map(lambda name:name.capitalize(), names)
-print(list(res))
+# res=map(lambda name:name.capitalize(), names)
+# print(list(res))
+
+
 

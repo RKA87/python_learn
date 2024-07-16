@@ -71,6 +71,10 @@ numbers=[2,3,4,5,6,7,8]
 result=map(even_num,numbers)
 print("Using map function:", tuple(result))
 
+var1=lambda item:item*2 if item%2==0 else item
+result=map(var1,numbers)
+
+
 #using lambda function
 result=map(lambda number:number*2 if number%2==0 else number, numbers) #lambda logic to be observe (if & else condition)
 print("Uing lambda function:",list(result))
@@ -129,9 +133,6 @@ print("Using lambda with map:",list(res3))
 res4=filter(lambda mountain:mountain[1]>8600, mountains)
 print("Using lambda with filter:",list(res4))
 
-#using list comprehension syntax output_expresssion for loop in list condition
+#using list comprehension syntax output_expresssion-for loop in list-condition
 res5=[element for element in mountains if element[1]>8600]
 print(res5)
-
-
-

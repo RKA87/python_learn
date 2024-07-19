@@ -203,6 +203,3 @@ Given a Python list, write a program to remove all occurrences of a given item.
 
 # res=map(lambda name:name.capitalize(), names)
 # print(list(res))
-
-
-

@@ -22,3 +22,35 @@ print(odd_number)
 
 concatenated_list=x+y
 print("Concatenated List Output:", concatenated_list)
+
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+output=[element for element in fruits if "a" in element]
+
+print("Fruits Lits with a letter:", output)
+
+numbers = [1, 2, 3, 4]
+squared_numbers=[number**2 for number in numbers]
+print("Squared Numbers:",squared_numbers)
+
+x=map(lambda number:number*2, numbers)
+result=list(x)
+print("Resultant list:",result)
+
+twoDMatrix = [[10, 20, 30], 
+              [40, 50, 60], 
+              [70, 80, 90]]
+print(twoDMatrix[1][2])
+
+#list comprehension with function
+def digitSum(n): 
+    dsum = 0
+    for ele in str(n): 
+        dsum += int(ele) 
+    return dsum 
+  
+# Initializing list 
+List = [367, 111, 562, 945, 6726, 873]
+output_result=[digitSum(i) for i in List if i & 1] #need to check with sir, if 1 & i
+print(output_result)

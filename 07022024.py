@@ -337,3 +337,23 @@ def replace_first_entry(num):
 x = 200
 res=replace_first_entry(x)
 print("Result List:", res)
+
+# Find the largest number in the list
+
+li=[4,5,19,17, 399, 9777, 23, 45,487, 9747,-45]
+
+large_number=li[0]
+
+for each in li:
+    if each >large_number:
+        number = each
+print("Large Number:", large_number)
+
+# Find the smallest number in the list
+
+small_number=li[0]
+
+for each_num in li:
+    if each_num < small_number:
+        small_number=each_num
+print("Small Number:", small_number)

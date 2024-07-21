@@ -207,3 +207,24 @@ Given a Python list, write a program to remove all occurrences of a given item.
 
 # Find the largest number in the list [1,4,5,19,0, 23, -1, 45]
 # Find the smallest number in the list [999,12,34,111,-7,-11,45]
+
+# Task 7:
+# Given two arrays, find all pairs from both arrays whose sum is equal to x. 
+# Input : arr1 = [1, 2, 4, 5, 7] ; arr2 = [5, 6, 3, 4, 8]  
+# x = 9
+# Output : [(1, 8), (4, 5), (5, 4)]
+
+  
+
+# for x in arr1:
+#     for y in arr2:
+#         if x + y == 9:
+#             print(x,y)
+
+
+
+
+
+
+# def res(l):
+#     

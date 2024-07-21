@@ -54,3 +54,20 @@ def digitSum(n):
 List = [367, 111, 562, 945, 6726, 873]
 output_result=[digitSum(i) for i in List if i & 1] #need to check with sir, if 1 & i
 print(output_result)
+
+# Duplicate Elements count in a list and removing the duplicates using with out count or counter method or set method to remove duplicates
+
+li=['white', 'white', 'brown', 'yellow', 'yellow', 'green', 'green', 'orange', 'orange', 'orange']
+
+empty_list = []
+count_list = {}
+
+for element in li:
+    if element not in empty_list:
+        empty_list.append(element)
+        count_list[element] = 1 #using Dictionary concept
+    else:
+        count_list[element] +=1 #using Dictinoary - increasing the value count
+
+print("After Removing duplicates:", empty_list)
+print("Count List of Each Element from the list:", count_list)

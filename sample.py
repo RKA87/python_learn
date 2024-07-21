@@ -209,3 +209,30 @@ Given a Python list, write a program to remove all occurrences of a given item.
 # Find the smallest number in the list [999,12,34,111,-7,-11,45]
 
 
+# list=['white', 'white', 'brown', 'yellow', 'yellow', 'green', 'green', 'orange', 'orange', 'orange']
+
+# empty_list = []
+
+# count_list = {}
+
+# for each_element in list:
+#     if each_element not in empty_list:
+#         empty_list.append(each_element)
+#         count_list[each_element] = 1
+#     else:
+#         count_list[each_element] +=1
+
+# print("After Removing duplicates:", empty_list)
+# print("Count List of Each Element from the list:", count_list)
+
+
+li=['white', 'white', 'brown', 'yellow', 'yellow', 'green', 'green', 'orange', 'orange', 'orange']
+
+x=set(li)
+print(type(x))
+print("After remove duplicates:", x)
+y=list(x)
+print(type(y))
+print("After converted into list:", y)
+
+

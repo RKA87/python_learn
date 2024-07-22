@@ -224,7 +224,3 @@ Given a Python list, write a program to remove all occurrences of a given item.
 # Task 20
 # Create a list from the elements of a range from 1200 to 2000 with steps of 130, using list comprehension.
 
-
-
-
-

@@ -1,6 +1,6 @@
 import itertools
 
-from itertools import count, repeat, permutations, combinations, chain, cycle
+from itertools import count, repeat, permutations, combinations, chain, cycle, product
 
 counter=count(5,2)
 for i in range(5):
@@ -35,8 +35,19 @@ print(permuation_presentation2)
 combination1=[1,2,3,4]
 
 # combination_presentation1=list(combinations(combination1))
-combination_presentation2=list(combinations(combination1,3))
+combination_presentation2=list(combinations(combination1,3)) #length 3 must be define as an argument in combinations
 
 # print(combination_presentation1)
 
 print(combination_presentation2)
+
+#using product, you can give n no of lists as arguments and output will be in Tuple
+
+product_list=list(product(my_list_1,my_list_2,my_list_3))
+print("Product List:",product_list)
+
+list_1 = [1, 2]
+list_2 = ['a', 'b', 'c']
+
+product_list_output=list(product(list_1,list_2))
+print("Product List Output:",product_list_output)

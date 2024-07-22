@@ -185,3 +185,185 @@ print("Output Result List:",output)
 #case 2 comprehension list, need to check with sir
 # result=[element for element in prices if str(element).startswith("-") or str(element)=="0" print "" else element]
 
+# Task 11:
+# Generate a list of tuples containing a number and its square.
+# [(1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+
+def tup_range(number):
+    new_list=[(x,x*x) for x in range(1,number)]
+    return new_list
+
+num=7
+res=tup_range(num)
+print("List of Tuple set using the Number:",res)
+
+# Task 12:
+# Create a list of even numbers squared and odd numbers cubed from 1 to 10
+# [1, 4, 27, 16, 125, 36, 343, 64, 729, 100]
+
+for i in range(1,11):
+    if (i%2)==0:
+        print(i*i)
+    else:
+        print(i**3)
+
+def square_cube(number):
+    square_cube_list=[i**2 if (i%2==0) else i**3 for i in range(1,number)]
+    return square_cube_list
+
+x=11
+res=square_cube(x)
+print("Square Cube List:",res)
+
+# Task 13:
+# Create a list of first characters from a list of words
+# ['apple', 'banana', 'cherry']
+# ['a', 'b', 'c']
+def first_char(li):
+    new_list=[ element[0]  for element in li]
+    return new_list
+
+li=['apple', 'banana', 'cherry']
+res=first_char(li)
+print("First Character from list:",res)
+
+# Task 14:
+# Create a list of strings with vowels replaced by asterisks
+# Sample Output
+# ['apple', 'banana', 'cherry']
+# ['*ppl*', 'b*n*n*', 'ch*rry']
+
+given_list=['apple', 'banana', 'cherry']
+result_list=[]
+
+vowels="AaEeIiOoUu"
+for word in given_list:
+    for char in word:
+        if char in vowels:
+            word=word.replace(char, "*")
+    result_list.append(word)
+print("Input Given List:", given_list)
+print("Asterik List Result:",result_list)
+
+# case 2 #need to check with sir, output print twice based on element in a list 
+def asterik_list(li):    
+    result_list=[element.replace(char,"*") for element in li for char in element if char in "AaEeIiOoUu"]
+    return result_list
+
+given_list=['apple', 'banana', 'cherry']
+output=asterik_list(given_list)
+print(output)
+
+# Task 15:
+# Create a list of characters that are digits from a string
+# Sample Output
+# 12345Hello67890
+# ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+
+string="12345Hello67890"
+# case 1
+new_list=[]
+for each_element in string:
+    if each_element.isdigit():
+        new_list.append(each_element)
+print(new_list)
+
+# case 2
+def string_list(string):
+    new_list=[each_element for each_element in string if each_element.isdigit()]
+    return new_list
+
+result=string_list(string)
+print("Resultant List:",result)
+
+# Task 16
+# Given a list of numbers, remove floats (numbers with decimals)
+
+# case 1
+original_list = [2,3.75,.04,59.354,6,7.7777,8,9]
+filtered_list=[]
+for element in original_list:
+    if type(element) is float:
+        pass
+    else:
+        filtered_list.append(element)
+
+print(original_list)
+print(filtered_list)
+
+# case 2
+def remove_float(li):
+    new_list=[element for element in li if type(element) is not float]
+    return new_list
+
+filter_list=remove_float(original_list)
+print("After float elements removed:",filter_list)
+
+# Task 17
+# Find all the numbers from 1-100 that are divisible by 7
+
+def divisible_by_7():
+    new_list=[element for element in range(1,101) if element%7==0]
+    return new_list
+
+output=divisible_by_7()
+print("7 Divisible List:",output)
+
+# Task 18
+# Find all the numbers from 1-100 that have 3 in them
+
+# case 1
+for num in range(1,41):
+     x=str(num)
+     if x.endswith("3") or x.startswith("3"):
+          print(x)
+
+# case 2
+def three_in_list(number):
+     new_list=[str(num) for num in range(1,number) if str(num).startswith("3") or str(num).endswith("3")]
+     return new_list
+
+three_list=three_in_list(101)
+print("Numbers that have 3 list:",three_list)
+
+#Task 19
+# Count the number of space in a string
+# Ex. “H ll  W rld”
+
+example="H ll  W rld"
+example2="R a K E s H"
+print(example2.count(" "))
+
+# Task 20
+# Create a list from the elements of a range from 1200 to 2000 with steps of 130, using list comprehension.
+def steps_130(number_range):
+    new_list=[number for number in range(1200,number_range,130)]
+    return new_list
+
+x=steps_130(2000)
+print("steps 130 difference list:",x)
+
+# Task 21
+# Use list comprehension to construct a new list but add 6 to each item
+def add_six():
+    new_list=[number+6 for number in range(1,100)]
+    return new_list
+
+output=add_six()
+print("Add Six for Every Element List:",output)
+
+
+# Task 22
+# Timeit is a package that provides a timer function.. The details can be learnt at https://docs.python.org/3/library/timeit.html
+# Use timeit to prove that list comprehension is faster compared to map and for loop using any of the problem given above. You can consider using Task 20
+
+# need to check with Sir
+import timeit
+
+list_comprehension=[number for number in range(1200,2000,130)]
+new_list=timeit.timeit(list_comprehension,number=10000)
+print(new_list)
+
+lambda_function=lambda number:number in range(1200,2000,130)
+lambda_list=timeit.timeit(lambda_function,number=10000)
+print(lambda_list)

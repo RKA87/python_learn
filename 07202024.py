@@ -39,9 +39,18 @@ print(fraction_resultant_list)
 # Write a program to find the count of vowels in each element of the list.  Ex. colors = [“white”, “brown”, “yellow”, “green”, “orange”]  
 # Result = [2, 1, 2, 2, 3]	#lists the count of vowels in each 
 
+# case 1
+def char_count(each_word):
+    vowels="AaEeIiOoUu"
+    count=0
+    for char in each_word:        
+        if char in vowels:
+            count +=1
+    return count
 
-# vowel_count_list=[each_string for each_string in string_list for char in each_string if char in vowels] #need to check with sir 
-# print(vowel_count_list) 
+string_list=["white","brown","yellow","green","orange"]
+vowel_count_list=[char_count(each_word) for each_word in string_list]
+print(vowel_count_list)
 
 #case2
 
@@ -182,8 +191,17 @@ output=res(prices)
 print("Prices Input List:",prices)
 print("Output Result List:",output)
 
-#case 2 comprehension list, need to check with sir
-# result=[element for element in prices if str(element).startswith("-") or str(element)=="0" print "" else element]
+def element_conversion(element):
+    x=str(element)
+    if x.startswith("-"):
+        x="0"
+    else:
+        x
+    return x
+
+prices = [1.25, -9.45, 10.22, 3.78, -5.92, 1.16]
+result_list=[element_conversion(element) for element in prices]
+print(result_list)
 
 # Task 11:
 # Generate a list of tuples containing a number and its square.
@@ -361,9 +379,9 @@ print("Add Six for Every Element List:",output)
 import timeit
 
 list_comprehension=[number for number in range(1200,2000,130)]
-new_list=timeit.timeit(list_comprehension,number=10000)
+new_list=timeit.timeit(stmt=list_comprehension)
 print(new_list)
 
 lambda_function=lambda number:number in range(1200,2000,130)
-lambda_list=timeit.timeit(lambda_function,number=10000)
+lambda_list=timeit.timeit(lambda_function)
 print(lambda_list)

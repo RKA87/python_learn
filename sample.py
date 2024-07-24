@@ -223,4 +223,21 @@ Given a Python list, write a program to remove all occurrences of a given item.
 
 # Task 20
 # Create a list from the elements of a range from 1200 to 2000 with steps of 130, using list comprehension.
+# import timeit
+
+# def test():
+#     list_comprehension=[number for number in range(1200,2000,130)]
+
+# print(timeit.timeit(stmt='[number for number in range(1200,2000,130)]'))
+
+# Task 10:
+# You have a list of prices - replace negative prices with 0 and leave the positive values unchanged:
+# prices = [1.25, -9.45, 10.22, 3.78, -5.92, 1.16]
+# Result = [1.25, 0, 10.22, 3.78, 0, 1.26]
+
+
+given_list=['apple', 'banana', 'cherry']
+
+result_list=[element.replace(char,"*") for element in given_list for char in "AaEeIiOoUu" if char in element]
+
 

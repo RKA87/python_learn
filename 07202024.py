@@ -263,14 +263,29 @@ for word in given_list:
 print("Input Given List:", given_list)
 print("Asterik List Result:",result_list)
 
-# case 2 #need to check with sir, output print twice based on element in a list 
+# case 2
 def asterik_list(li):    
-    result_list=[element.replace(char,"*") for element in li for char in element if char in "AaEeIiOoUu"]
+    result_list=[''.join('*' if char in "AaEeIiOoUu" else char for char in element) for element in li]
     return result_list
 
 given_list=['apple', 'banana', 'cherry']
 output=asterik_list(given_list)
 print(output)
+
+# case 3
+def astreik_output(element):
+    vowels="AaEeIiOoUu"
+    for each_char in element:
+        if each_char in vowels:
+            element=element.replace(each_char, "*")    
+    return element
+
+output=astreik_output("apple")
+print(output)
+
+given_list=['apple', 'banana', 'cherry','rakesh', 'sujana']
+res=[astreik_output(element) for element in given_list]
+print(res)
 
 # Task 15:
 # Create a list of characters that are digits from a string
@@ -377,11 +392,10 @@ print("Add Six for Every Element List:",output)
 
 # need to check with Sir
 import timeit
+'''
+syntax:
 
-list_comprehension=[number for number in range(1200,2000,130)]
-new_list=timeit.timeit(stmt=list_comprehension)
-print(new_list)
+The timeit module expects a statement that can be executed. You should either pass a full expression or function call
+'''
+print(timeit.timeit(add_six))
 
-lambda_function=lambda number:number in range(1200,2000,130)
-lambda_list=timeit.timeit(lambda_function)
-print(lambda_list)

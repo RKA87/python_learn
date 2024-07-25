@@ -234,10 +234,45 @@ Given a Python list, write a program to remove all occurrences of a given item.
 # You have a list of prices - replace negative prices with 0 and leave the positive values unchanged:
 # prices = [1.25, -9.45, 10.22, 3.78, -5.92, 1.16]
 # Result = [1.25, 0, 10.22, 3.78, 0, 1.26]
+# given_list=['apple', 'banana', 'cherry']
+# result_list=[]
+
+# vowels="AaEeIiOoUu"
+# for word in given_list:
+#     for char in word:
+#         if char in vowels:
+#             word=word.replace(char, "*")
+#     result_list.append(word)
+# print("Input Given List:", given_list)
+# print("Asterik List Result:",result_list)
 
 
-given_list=['apple', 'banana', 'cherry']
+import timeit
 
-result_list=[element.replace(char,"*") for element in given_list for char in "AaEeIiOoUu" if char in element]
+# list_comprehension=[number for number in range(1200,2000,130)]
+# new_list=timeit.timeit(stmt=list_comprehension)
+# print(new_list)
+
+# lambda_function=lambda number:number in range(1200,2000,130)
+# lambda_list=timeit.timeit(lambda_function)
+# print(lambda_list)
+
+def add_six():
+    new_list=[number+6 for number in range(1,100)]
+    return new_list
 
 
+import random
+
+mysetup="import random"
+
+mystmt='''(random.randint(3,9))'''
+
+print(timeit.timeit(setup=mysetup,stmt=mystmt,number=2))
+
+stmt='''
+def sum(x,y):
+    total=x+y
+    return total
+'''
+print(timeit.timeit(stmt=stmt))

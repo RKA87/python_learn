@@ -270,9 +270,3 @@ mystmt='''(random.randint(3,9))'''
 
 print(timeit.timeit(setup=mysetup,stmt=mystmt,number=2))
 
-stmt='''
-def sum(x,y):
-    total=x+y
-    return total
-'''
-print(timeit.timeit(stmt=stmt))

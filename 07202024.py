@@ -396,6 +396,13 @@ import timeit
 syntax:
 
 The timeit module expects a statement that can be executed. You should either pass a full expression or function call
+timeit.timeit(setup,stmt,number,)
 '''
-print(timeit.timeit(add_six))
+print(timeit.timeit(add_six)) #add_six is a function
 
+stmt='''
+def sum(x,y):
+    total=x+y
+    return total
+'''
+print(timeit.timeit(stmt=stmt))

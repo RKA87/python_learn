@@ -261,12 +261,11 @@ def add_six():
     new_list=[number+6 for number in range(1,100)]
     return new_list
 
+# 8. Create a dictionary of words and their vowels from a list of strings
+# Sample Output
+# ['apple', 'banana', 'cherry']
+# {'apple': 2, 'banana': 3, 'cherry': 1}
+sentence = "Python is fun"
 
-import random
-
-mysetup="import random"
-
-mystmt='''(random.randint(3,9))'''
-
-print(timeit.timeit(setup=mysetup,stmt=mystmt,number=2))
-
+x=(sentence.split()[::-1])
+print(list(enumerate(x)))

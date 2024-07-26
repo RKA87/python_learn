@@ -116,3 +116,18 @@ print(dict_output)
 li=['apple', 'banana', 'cherry']
 dict_output={each:each[::-1] for each in li}
 print(dict_output)
+
+# 14. Pairs of distinct elements and their absolute difference from two lists
+# Sample Output
+# [3, 6, 9]
+# [5, 10, 15]
+# Output: {(3, 5): 2, (3, 10): 7, (3, 15): 12, (6, 5): 1, (6, 10): 4, (6, 15): 9, (9, 5): 4, (9, 10): 1, (9, 15): 6}
+import itertools
+
+x=[3, 6, 9]
+y=[5, 10, 15]
+
+product_list=list(itertools.product(x,y))
+dict_output={element:abs(element[0]-element[1]) for element in product_list}
+
+print(dict_output)

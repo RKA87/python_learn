@@ -265,7 +265,12 @@ def add_six():
 # Sample Output
 # ['apple', 'banana', 'cherry']
 # {'apple': 2, 'banana': 3, 'cherry': 1}
-sentence = "Python is fun"
+# sentence = "Python is fun"
 
-x=(sentence.split()[::-1])
-print(list(enumerate(x)))
+# x=(sentence.split()[::-1])
+# print(list(enumerate(x)))
+
+import itertools
+from itertools import combinations
+
+

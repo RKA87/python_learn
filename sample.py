@@ -270,41 +270,22 @@ def add_six():
 # x=(sentence.split()[::-1])
 # print(list(enumerate(x)))
 
+list_d = [
+    {"Full Throttle": 1995},
+    {"Sid Meier's Civilization II": 1996},
+    {"Diablo": 1996},
+]
 
-row="Sniper Elite 4, Switch,17-Nov-20,Welcome to Italy, 1943. Set in the aftermath of its award-winning predecessor"
-print(row[0])
+res={}
+for d in list_d:
+    res.update(d)
 
-from datetime import datetime
+print(res)
 
+res2={key:value for d in list_d for key,value in d.items()}
+print(res2)
 
+# using condition statement only 1996
 
-def year_result(element):
-    x=(datetime.strptime(element,"%d-%b-%y"))
-    x=x.strftime('%d-%m-%Y')
-    return x.split("-")[2]
-
-string_elements=['23-Nov-98', '20-Sep-00', '29-Apr-08', '8-Sep-99', '29-Apr-08']
-year_list=[year_result(element) for element in string_elements]
-
-
-# Word Frequency
-
-quote = """time is too slow for those who wait too swift for those who fear too long for
-those who grieve too short for those who rejoicebut for those who love, time is eternity"""
-
-# list_output=quote.split(" ")
-
-# dict_output={}
-# for each in list_output:
-#     dict_output[each]=list_output.count(each)
-# print(dict_output)
-
-
-output_dict={each:quote.split().count(each) for each in quote.split()}
-
-print(output_dict)
-
-
-
-
-
+res3={key:value for d in list_d for key,value in d.items() if value==1996}
+print(res3)

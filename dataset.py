@@ -199,6 +199,44 @@ sorted_year={key:value for key, value in sorted(date_dictionary_int.items(),key=
 print("Sorted Year Wise:",list(sorted_year.items())[:5])
 
 # Flattening of Dictionaries
+'''
+The proper approach to merge the list of dictionaries into a single dictionary.
+It can be done using the update method in a loop or through a dictionary comprehension with correct variable scope
+'''
+ini_dict = [{'a':1}, {'b':2}, {'c':3}]
+
+# case 1
+res={}
+for d in ini_dict:
+    res.update(d)
+
+print(res)
+
+# case 2
+res2={key:value for d in ini_dict for key,value in d.items()}
+print(res2)
+
+# Another Case study using different list
+list_d = [
+    {"Full Throttle": 1995},
+    {"Sid Meier's Civilization II": 1996},
+    {"Diablo": 1996},
+]
+# case 1
+res={}
+for d in list_d:
+    res.update(d)
+
+print(res)
+
+# case 2
+res2={key:value for d in list_d for key,value in d.items()}
+print(res2)
+
+# case 3
+# using condition statement only 1996
+res3={key:value for d in list_d for key,value in d.items() if value==1996}
+print(res3)
 
 # Word Frequency
 

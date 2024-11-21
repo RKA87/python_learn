@@ -9,6 +9,7 @@ class Clock:
         if type(hours) == int and hours >= 0 and hours < 24:
             self._hours=hours
         else:
+<<<<<<< HEAD
             raise Exception ("Hours have to be integers between 0 to 23 only !")
         if type(minutes) == int and minutes >= 0 and minutes <60:
             self.__minutes=minutes
@@ -23,6 +24,18 @@ class Clock:
         # print ("{0:02d}:{1:02d}:{2:02d}".format(self._hours, self.__minutes, self.__seconds))
         return ("{0:02d}:{1:02d}:{2:02d}".format(self._hours, self.__minutes, self.__seconds)) # In Python the __str__ method should return the value but not to print it
 
+=======
+            self._hours=hours
+        if type(minutes) == int and minutes >=0 and minutes <60:
+            self.__minutes=minutes
+        else:
+            self.__minutes=minutes
+        if type(seconds) == int and seconds >=0 and seconds <60:
+            self.__seconds=seconds
+        else:
+            self.__seconds=seconds
+    
+>>>>>>> 23563f29be6fa11ba1def91061921847b50f4daf
     def tick(self):
         if self.__seconds == 59:
             self.__seconds = 0
@@ -31,6 +44,7 @@ class Clock:
                 if self._hours == 23:
                     self._hours = 0
                 else:
+<<<<<<< HEAD
                     self._hours += 1
             else:
                 self.__minutes += 1
@@ -42,3 +56,18 @@ try:
     print(x)
 except Exception as E:
     print("Errro Message:", E)
+=======
+                    self._hours +=1
+            else:
+                self.__minutes +=1
+        else:
+            self.__seconds +=1
+        
+    def __str__(self) -> str:
+        return "{0:02d}:{1:02d}:{2:02d}".format(self._hours, self.__minutes,self.__seconds)
+   
+x=Clock(22,33,59)
+print("Before Tick:",x)
+x.tick()
+print("After Tick:",x)
+>>>>>>> 23563f29be6fa11ba1def91061921847b50f4daf

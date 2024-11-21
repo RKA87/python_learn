@@ -59,5 +59,3 @@ inst.charge_battery()
 inst.refuel()
 inst.drive()    
 
-illegal_names = {"Henry", "Oscar"}
-print(type(illegal_names))

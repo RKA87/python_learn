@@ -1,4 +1,6 @@
-# Without defining StaticMethod This is called Instance Method
+# StaticMethod to define in Python using Properties which is called @staticmethod
+# StaticMethod will never use Self in the code, its called Class Methods
+# Will define Self only instance methods
 
 class Animal:
     _animalvariable="This Animal is called"

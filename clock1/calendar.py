@@ -27,6 +27,25 @@ class Calendar:
             return "{0:02d}/{1:02d}/{2:02d}".format(self.__days, self.__months, self.__years)
         else:
             return "{0:02d}/{1:02d}/{2:02d}".format(self.__months, self.__days, self.__years)
+    
+    def advance(self):
+        """
+        This method advances to the next date.
+        """
+
+        max_days = Calendar.months[self.__months-1]
+        if self.__months == 2 and Calendar.leapyear(self.__years):
+            max_days += 1
+        if self.__days == max_days:
+            self.__days= 1
+            if self.__months == 12:
+                self.__months = 1
+                self.__years += 1
+            else:
+                self.__months += 1
+        else:
+            self.__days += 1
+
 
 x = Calendar(31,12,2012)
 y = Calendar(30,7,2024)

@@ -39,7 +39,8 @@ class Robot:
         print("Hi, I am", self.name)
         print("My health level is: ", self.health_level)
 
-first_generation = (Robot("Marvin"), Robot("Engima-Alan"), Robot("Charles-Henry"))
+first_generation = (Robot("Marvin"), Robot("Engima-Alan"), Robot("Charles-Henry")) #you can assign the instance as a tuple for the class
+
 print(first_generation) # Here we get the Memory reference value
 
 # we can get ouptut as we expect __str__() format
@@ -47,7 +48,7 @@ print(first_generation) # Here we get the Memory reference value
 # print("String formatted output:",'\n',first_generation)
 
 gen1=first_generation
-print(type(gen1))
+
 
 # babies=[gen1[0] + gen1[1], gen1[1] + gen1[2]]
 # print(babies)

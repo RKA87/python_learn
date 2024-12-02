@@ -4,9 +4,3 @@
 #     content=file.readlines()
 #     print(content)
 
-import os
-cwd=os.getcwd()
-file_name=input("Enter the filename:")
-
-file_path=os.path.join(cwd,file_name)
-print(cwd+file_name)

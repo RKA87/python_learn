@@ -56,3 +56,25 @@ word="is"
 (result1,result2)=inst.word_search(word)
 print(f"The word '{word}' appears {result1} times.")
 print(f"Frequency Word Count of '{word}' is:",result2)
+
+
+class Listttofile:
+    def __init__(self,list):
+        self.list=list
+
+    def list_to_file(self):
+        import os            
+        cwd=os.getcwd()
+        filename=input("Enter the filename:")
+        os.path.join(cwd, filename)
+        with open(filename, 'w') as file:
+            for item in self.list:
+                file.writelines(str(item)+'\n')
+
+            file.close()
+        print("List to file copied in directory")
+
+list=[1,2,3,4,5,6,7,8,9]
+inst=Listttofile(list)
+result=inst.list_to_file()
+print(result)

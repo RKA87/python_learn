@@ -7,7 +7,10 @@ class Fileread:
     def filepath(self):
         get_cwd=os.getcwd()
         file_path=os.path.join(get_cwd,self.filename)
-        return file_path
+        if os.path.exists(file_path):
+            return file_path
+        else:
+            return "FileNotExist"
     
     def data(self):
         try:
@@ -35,14 +38,17 @@ class Fileread:
         return word_count
 
 
-inst=Fileread("requirements.txt")
-data=inst.data()
-print(data)
+inst=Fileread("requirements")
+filepath=inst.filepath()
+print("FilePath:",filepath)
 
-(a,b)=inst.total_words_line_count()
-print("Total No of lines:", a)
-print("Total No of words:", b)
+# data=inst.data()
+# print(data)
 
-word="is"
-result=inst.word_search(word)
-print(f"The word '{word}' appears {result} times.")
+# (a,b)=inst.total_words_line_count()
+# print("Total No of lines:", a)
+# print("Total No of words:", b)
+
+# word="is"
+# result=inst.word_search(word)
+# print(f"The word '{word}' appears {result} times.")

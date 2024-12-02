@@ -12,7 +12,7 @@ class Fileread:
         else:
             return "FileNotExist"
     
-    def data(self):
+    def get_data(self):
         try:
             with open(self.filepath(),'r',encoding="utf-16") as file:
                 content=file.readlines()
@@ -23,7 +23,7 @@ class Fileread:
     def total_words_line_count(self):
         line_count=0
         words_count=0
-        for line in self.data():
+        for line in self.get_data():
             line_count += 1
             strip_string=line.strip()
             words=strip_string.split(" ")
@@ -32,23 +32,27 @@ class Fileread:
     
     def word_search(self,word:str):
         word_count=0
-        for line in self.data():
+        frequency_word_count=0
+        for line in self.get_data():
             x=line.strip().split(" ")
             word_count += x.count(word)
-        return word_count
+            if word in x:
+                frequency_word_count += 1        
+        return (word_count, frequency_word_count)
+    
 
-
-inst=Fileread("requirements")
+inst=Fileread("requirements.txt")
 filepath=inst.filepath()
 print("FilePath:",filepath)
 
-# data=inst.data()
-# print(data)
+data=inst.get_data()
+print(data)
 
-# (a,b)=inst.total_words_line_count()
-# print("Total No of lines:", a)
-# print("Total No of words:", b)
+(a,b)=inst.total_words_line_count()
+print("Total No of lines:", a)
+print("Total No of words:", b)
 
-# word="is"
-# result=inst.word_search(word)
-# print(f"The word '{word}' appears {result} times.")
+word="is"
+(result1,result2)=inst.word_search(word)
+print(f"The word '{word}' appears {result1} times.")
+print(f"Frequency Word Count of '{word}' is:",result2)

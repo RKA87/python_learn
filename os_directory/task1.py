@@ -30,7 +30,7 @@ class Fileread:
             words_count +=len(words)
         return (line_count, words_count)
     
-    def word_search(self,word:str):
+    def word_frequency_search(self,word:str):
         word_count=0
         frequency_word_count=0
         for line in self.get_data():
@@ -40,6 +40,14 @@ class Fileread:
                 frequency_word_count += 1        
         return (word_count, frequency_word_count)
     
+    def write_list_into_file(self,new_filename):
+        get_cwd=os.getcwd()
+        file_path=os.path.join(get_cwd,new_filename)
+        with open(file_path,'w') as new_file:
+            for line in self.get_data():
+                new_file.writelines(line)
+        return ("New file written in the defined path")
+  
 
 inst=Fileread("requirements.txt")
 filepath=inst.filepath()
@@ -53,28 +61,10 @@ print("Total No of lines:", a)
 print("Total No of words:", b)
 
 word="is"
-(result1,result2)=inst.word_search(word)
+(result1,result2)=inst.word_frequency_search(word)
 print(f"The word '{word}' appears {result1} times.")
 print(f"Frequency Word Count of '{word}' is:",result2)
 
-
-class Listttofile:
-    def __init__(self,list):
-        self.list=list
-
-    def list_to_file(self):
-        import os            
-        cwd=os.getcwd()
-        filename=input("Enter the filename:")
-        os.path.join(cwd, filename)
-        with open(filename, 'w') as file:
-            for item in self.list:
-                file.writelines(str(item)+'\n')
-
-            file.close()
-        print("List to file copied in directory")
-
-list=[1,2,3,4,5,6,7,8,9]
-inst=Listttofile(list)
-result=inst.list_to_file()
-print(result)
+new_filename="newfile.txt"
+result3=inst.write_list_into_file(new_filename)
+print(result3)
